@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ThaiStation Inventory</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="static/style.css"
+
+
 </head>
 <body>
-    <h1>Welcome to the HomePage!</h1>
+    
+   <div class="grid-container">
+
+    <!--Header-->
+    <header class="header"></header>
+
+    <!--Main-->
+    <main class="main-container"></main>
+
+   </div>
+    <script src="static/scripts.js"></script>
+   
+    {% for p in produkte %}
+        <p>{{ p.name }} </p>
+        <p>{{p.preis}}</p>
+    {% endfor %}
 </body>
 </html>
