@@ -5,25 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThaiStation Inventory</title>
     <!--CSS-->
-    <link rel="stylesheet" href="static/style.css"
+    <link rel="stylesheet" href="/static/style.css">
+    <!--Fonts & Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
     
-   <div class="grid-container">
+    <div class="grid-container">
 
     <!--Header-->
-    <header class="header"></header>
-
+        <header class="header">
+            <div class="header-left">
+                <i data-lucide="trending-up" class="nav-icon"></i>
+            </div>
+            <div class="header-right">
+                <i data-lucide="search" class="nav-icon"></i>
+            </div>
+        </header>
+        
     <!--Main-->
-    <main class="main-container"></main>
+        <main class="main-container"></main>
 
-   </div>
+    
+
+    </div>
     <script src="static/scripts.js"></script>
    
     {% for p in produkte %}
         <p>{{ p.name }} </p>
         <p>{{p.preis}}</p>
     {% endfor %}
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    
+    <script>
+        lucide.createIcons();
+    </script>
+
 </body>
 </html>
