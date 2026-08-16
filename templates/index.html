@@ -21,6 +21,7 @@
         <header class="header">
             <div class="header-left">
                 <i data-lucide="trending-up" class="nav-icon"></i>
+                <p class="title" >Inventar / Bestseller </p>
             </div>
             <div class="header-right">
                 <i data-lucide="search" class="nav-icon"></i>
@@ -28,7 +29,51 @@
         </header>
         
     <!--Main-->
-        <main class="main-container"></main>
+        <main class="main-container">
+            <div class="main-title"></div>
+
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3>GESAMTE PRODUKTE</h3>
+                            <i data-lucide="trending-up" class="nav-icon"></i>
+                        </div>
+                        <p>{{len(alle_produkte)}}</p>
+                    </div>
+                </div>
+
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3>AUF LAGER</h3>
+                            <i data-lucide="package-check" class="nav-icon"></i>
+                        </div>
+                        <p>{{len(produkte)}}</p>
+                    </div>
+                </div>
+
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3>AUSVERKAUFT</h3>
+                            <i data-lucide="package-x" class="nav-icon"></i>
+                        </div>
+                        <p>{{len(ausverkauft_produkte)}}</p>
+                    </div>
+                </div>
+
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3>UMSATZ GESAMT</h3>
+                            <i data-lucide="circle-euro" class="nav-icon"></i>
+                        </div>
+                        <p>{{gesamtumsatz}}</p>
+                    </div>
+                </div>
+
+        </main>
+
 
     
 

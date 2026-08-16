@@ -4,3 +4,7 @@ def testdaten():
     for p in produkte:
         if p["auf_lager"] == 1:
             print(p["name"], p["preis"])
+
+
+
+
