@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThaiStation Inventory</title>
+
     <!--CSS-->
     <link rel="stylesheet" href="/static/style.css">
+
     <!--Fonts & Icons-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
+    <!--DataTables-->
+    <link rel="stylesheet" href="static/lib/datatables/dataTables.css">
 
+
+    </style>
 </head>
 <body>
     
@@ -40,9 +46,9 @@
                         </div>
                         <p>{{len(alle_produkte)}}</p>
                     </div>
-                </div>
+                
 
-                <div class="main-cards">
+                
                     <div class="card">
                         <div class="card-inner">
                             <h3>AUF LAGER</h3>
@@ -50,9 +56,9 @@
                         </div>
                         <p>{{len(produkte)}}</p>
                     </div>
-                </div>
+                
 
-                <div class="main-cards">
+                
                     <div class="card">
                         <div class="card-inner">
                             <h3>AUSVERKAUFT</h3>
@@ -60,9 +66,9 @@
                         </div>
                         <p>{{len(ausverkauft_produkte)}}</p>
                     </div>
-                </div>
+                
 
-                <div class="main-cards">
+                
                     <div class="card">
                         <div class="card-inner">
                             <h3>UMSATZ GESAMT</h3>
@@ -71,19 +77,47 @@
                         <p>{{gesamtumsatz}}</p>
                     </div>
                 </div>
+            <table id="myTable" class="display">
+
+                <thead>
+                    <th>#</th>
+                    <th>Produkt</th>
+                    <th>Preis</th>
+                    <th>Bestand</th>
+                </thead>
+                <tbody>
+                <!--Artikel 1-->
+                {% for p in produkte %}
+                   <tr>
+                        <td>{{p.id}}</td>
+                        <td>{{p.name}}</td>
+                        <td>{{p.preis}}</td>
+                        <td>{{p.auf_lager}}</td>
+                   </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        <!--jQuery-->
+        <script src="static/lib/datatables/jquery/jquery-4.0.0.js"></script>
+        <!--DataTables-->
+        <script src="static/lib/datatables/dataTables.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                $('#myTable').DataTable();
+            });
+
+        </script>   
 
         </main>
 
 
     
-
+        
     </div>
     <script src="static/scripts.js"></script>
    
-    {% for p in produkte %}
-        <p>{{ p.name }} </p>
-        <p>{{p.preis}}</p>
-    {% endfor %}
+ 
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
@@ -91,6 +125,8 @@
     <script>
         lucide.createIcons();
     </script>
+
+    
 
 </body>
 </html>
