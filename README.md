@@ -1,4 +1,4 @@
-# ThaiStation Inventory Dashboard
+#Inventory Dashboard
 
 A web-based inventory dashboard built for a small grocery store. 
 It displays product data including stock status, revenue, and 
